@@ -16,7 +16,12 @@ class LoginPage extends Page {
         return $('#login-button');
     }
 
-   
+    async login (someUsername, thePassword) {
+        await this.inputUsername.setValue(someUsername);
+        await this.inputPassword.setValue(thePassword);
+        await this.btnSubmit.click();
+    }
+
     async login (theUsername, somePassword) {
         await this.inputUsername.setValue(theUsername);
         await this.inputPassword.setValue(somePassword);
